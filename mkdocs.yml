@@ -1,4 +1,47 @@
 site_name: Torben Böttcher
+site_url: https://tortem.github.io/homepage/
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: primary
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: primary
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.top
+
+plugins:
+  search: {}
+  blog:
+    blog_toc: true
+    categories_allowed:
+      - Kubernetes
+      - Operator
+
+extra_css:
+  - stylesheets/extra.css
+
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - index.md
+  - Home: index.md
+  - Blog:
+      - blog/index.md
