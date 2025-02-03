@@ -1,5 +1,4 @@
 ---
-draft: true
 date: 
   created: 2025-02-03
   updated: 2025-02-03
