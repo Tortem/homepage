@@ -1,3 +1,7 @@
-# Homepage
+---
+hide:
+  - navigation
+---
 
-This is the index page
+# Home
+

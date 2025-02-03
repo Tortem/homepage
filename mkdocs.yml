@@ -22,11 +22,12 @@ theme:
   features:
     - navigation.indexes
     - navigation.top
+    - navigation.tabs
 
 plugins:
   search: {}
   blog:
-    blog_toc: true
+    blog_dir: .
     categories_allowed:
       - Kubernetes
       - Operator
@@ -40,8 +41,3 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-nav:
-  - Home: index.md
-  - Blog:
-      - blog/index.md
