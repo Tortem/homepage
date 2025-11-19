@@ -75,8 +75,8 @@ jobs:
           yq eval ".version = \"$CHART_VERSION\"" -i ./helm/Chart.yaml
           
           # Update the image digest in values.yaml
-          echo "Using digest: ${{ needs.build.outputs.digest }}"
-          yq eval '.image.digest = "${{ needs.build.outputs.digest }}"' -i ./helm/values.yaml
+          echo "Using digest: ${{ needs.build-and-push.outputs.digest }}"
+          yq eval '.image.digest = "${{ needs.build-and-push.outputs.digest }}"' -i ./helm/values.yaml
           yq eval 'del(.image.tag)' -i ./helm/values.yaml
           helm package ./helm --destination .
 
