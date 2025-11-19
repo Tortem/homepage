@@ -20,11 +20,12 @@ spec:
   rules:
     - host: {{ .Values.ingress.host | quote }}
       http:
-        paths: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: {{ include "homepage.fullname" . }}
-            port:
-              number: {{ .Values.service.port }}
+        paths: 
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ include "homepage.fullname" . }}
+                port:
+                  number: {{ .Values.service.port }}
 {{- end }}
